@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wifike Furniture Dealers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="logo-area">
+        <!-- Simple logo SVG -->
+        <div class="logo-svg">
+          <svg width="56" height="56" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="20" width="84" height="60" rx="6" fill="#0b5ed7"/>
+            <path d="M20 32 L40 32 L40 62 L20 62 Z" fill="#7a4c2b"/>
+            <path d="M60 32 L80 32 L80 62 L60 62 Z" fill="#7a4c2b"/>
+            <circle cx="50" cy="18" r="6" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">Wifike Furniture Dealers</div>
+          <div class="brand-tag">Where Style Meets Skill</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#accounts">Accounts</a>
+        <a href="#market">Marketplace</a>
+        <a href="#learning">Learning</a>
+        <a href="#contact">Contact</a>
+        <button id="sellBtn" class="btn small">Sell & Advertise</button>
+      </nav>
+    </header>
+
+    <div class="content-wrap">
+      <aside class="left-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#accounts">Accounts</a></li>
+          <li><a href="#market">Marketplace</a></li>
+          <li><a href="#learning">Learning</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+
+      <main class="main-area">
+        <!-- HOME -->
+        <section id="home" class="section hero">
+          <div class="hero-left">
+            <h1>Transform Your Space with Quality Furniture</h1>
+            <p>From trusted carpenters across workshops and our own Wifike production line.</p>
+            <div class="cta-row">
+              <button class="btn" onclick="scrollTo('market')">Shop Furniture</button>
+              <button class="btn outline" onclick="scrollTo('learning')">Enroll in Carpentry</button>
+              <button class="btn outline" onclick="scrollTo('accounts')">Create Account</button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <!-- placeholder image block -->
+            <div class="hero-img"></div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section about">
+          <h2>About Wifike Furniture Dealers</h2>
+          <p><strong>Wifike Furniture Dealers</strong> specializes in selling high-quality furniture and training the next generation of skilled carpenters. Our platform connects creativity with craftsmanship — where beautiful designs meet practical learning.</p>
+          <div class="about-features">
+            <div class="f">Producer & Marketplace</div>
+            <div class="f">Custom Orders</div>
+            <div class="f">Carpentry Classes</div>
+          </div>
+        </section>
+
+        <!-- ACCOUNTS -->
+        <section id="accounts" class="section accounts">
+          <h2>Accounts</h2>
+          <p>Create or login to the account type you need.</p>
+          <div class="acct-grid">
+            <div class="acct-card">
+              <h3>Customer</h3>
+              <p>Shop, add to cart, checkout (STK simulation).</p>
+              <div class="acct-actions">
+                <button class="btn" onclick="openAuth('customer','signup')">Sign Up</button>
+                <button class="btn outline" onclick="openAuth('customer','login')">Login</button>
+              </div>
+            </div>
+
+            <div class="acct-card">
+              <h3>Carpenter</h3>
+              <p>Register workshop, upload items (after approval).</p>
+              <div class="acct-actions">
+                <button class="btn" onclick="openAuth('carpenter','signup')">Sign Up</button>
+                <button class="btn outline" onclick="openAuth('carpenter','login')">Login</button>
+              </div>
+            </div>
+
+            <div class="acct-card">
+              <h3>Learner</h3>
+              <p>Enroll in classes and access learner-only content.</p>
+              <div class="acct-actions">
+                <button class="btn" onclick="openAuth('learner','signup')">Sign Up</button>
+                <button class="btn outline" onclick="openAuth('learner','login')">Login</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MARKETPLACE -->
+        <section id="market" class="section market">
+          <h2>Marketplace</h2>
+          <p>All categories — items from Wifike and carpenters across workshops. Carpenters (after approval) can update item details and images.</p>
+
+          <div class="categories">
+            <div class="category">
+              <h3>Sofas & Couches</h3>
+              <div id="cat-sofas" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Beds & Frames</h3>
+              <div id="cat-beds" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Dining Sets</h3>
+              <div id="cat-dining" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Chairs & Stools</h3>
+              <div id="cat-chairs" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Office Furniture</h3>
+              <div id="cat-office" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Outdoor Furniture</h3>
+              <div id="cat-outdoor" class="product-grid"></div>
+            </div>
+
+            <div class="category">
+              <h3>Cabinets & Storage</h3>
+              <div id="cat-storage" class="product-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEARNING -->
+        <section id="learning" class="section learning">
+          <h2>Carpentry Training</h2>
+          <p>Courses — some modules are only available to admitted learners.</p>
+          <div id="courses" class="courses-grid"></div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact">
+          <h2>Contact Us</h2>
+          <p>WhatsApp: <a href="https://wa.me/254115070417" target="_blank">0115070417</a></p>
+          <p>Email: <a href="mailto:wifikedealers@gmail.com">wifikedealers@gmail.com</a></p>
+
+          <div class="help">
+            <h3>Online Help</h3>
+            <form id="helpForm">
+              <input id="helpName" placeholder="Your name" required />
+              <input id="helpMobile" placeholder="Mobile (optional)" />
+              <textarea id="helpMessage" placeholder="How can we help you?" required></textarea>
+              <div class="help-actions">
+                <button class="btn" type="submit">Send</button>
+              </div>
+            </form>
+            <div id="helpResp" class="help-resp"></div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© <strong>Wifike Furniture Dealers</strong> · Where Style Meets Skill</div>
+          <div class="footer-links">
+            <a href="#">Privacy</a> · <a href="#">Terms</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="modal hidden">
+      <div class="modal-body">
+        <button class="close" onclick="closeAuth()">×</button>
+        <h3 id="authTitle">Auth</h3>
+        <form id="authForm">
+          <div id="authFields"></div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Submit</button>
+            <button class="btn outline" type="button" onclick="closeAuth()">Cancel</button>
+          </div>
+        </form>
+        <div id="authMsg" class="auth-msg"></div>
+      </div>
+    </div>
+
+    <!-- EDIT PRODUCT MODAL -->
+    <div id="editModal" class="modal hidden">
+      <div class="modal-body">
+        <button class="close" onclick="closeEdit()">×</button>
+        <h3>Edit Product</h3>
+        <form id="editForm">
+          <input id="editName" placeholder="Product name" required />
+          <input id="editPrice" type="number" placeholder="Price (KSH)" required />
+          <input id="editImages" placeholder="Image URLs (comma separated)" />
+          <div class="form-actions">
+            <button class="btn" type="submit">Save</button>
+            <button class="btn outline" type="button" onclick="closeEdit()">Cancel</button>
+          </div>
+        </form>
+        <div id="editMsg"></div>
+      </div>
+    </div>
+
+    <!-- CART -->
+    <div id="cart" class="cart hidden">
+      <h4>Your Cart</h4>
+      <div id="cartItems"></div>
+      <div class="cart-footer">
+        <div>Total: KSH <span id="cartTotal">0</span></div>
+        <div><button id="checkout" class="btn">Checkout (STK)</button></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+  </html>
